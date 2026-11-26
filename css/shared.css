@@ -1,0 +1,4 @@
+/* Shared Nordic identity */
+:root{--bg:#f9f8f3;--text:#242b29;--muted:#5b625e;--brand:#8f1730;--brand-dark:#651020;--brand-accent:#8f1730;--border:#d6d9d2;--card:#fff;--tint:#e8eee8;--forest:#253e35;--sage:#e7ece6;--heading-font:Georgia,serif;--shadow-soft:none;--shadow:none}
+
+:root{--control-radius:6px} :focus-visible{outline:2px solid var(--brand);outline-offset:3px}

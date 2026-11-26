@@ -188,7 +188,13 @@
   #news .toggle-btn:hover{filter:brightness(.96);transform:translateY(-1px)}
 
   .media{width:100%;border-radius:24px;border:1px solid var(--border);object-fit:cover;box-shadow:var(--shadow-soft)}
-  .about-hero img{aspect-ratio:16/9;max-height:300px}
+  .about-hero img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+  }
   .about-text p{margin:.5rem 0}
   .about-grid{display:grid;gap:1.25rem}
   @media(min-width:900px){.about-grid{grid-template-columns:1fr 1fr}}
@@ -393,7 +399,7 @@
       <div class="content">
         <section id="about">
           <h1 data-i18n="aboutTitle">About us</h1>
-          <div class="about-hero"><img class="media" src="images/hero.jpg" alt="Ziemeļu Balsis group photo"></div>
+          <div class="about-hero"><img class="media" src="images/Titulbilde.jpg" alt="Ziemeļu Balsis group photo"></div>
           <div class="about-text">
             <p data-i18n="aboutP1">The Latvian choir in Estonia "Ziemeļu Balsis" was founded in 2012. Today, the choir unites singers from ten different countries. Ziemeļu Balsis is special not only for its international membership but also for its ability to bring together people from two Estonian cities — Tartu and Tallinn. Thanks to regular joint rehearsals, the choir has grown into a truly harmonious and united collective.</p>
             <p data-i18n="aboutP2">We are proud to be the first choir to take part in all three Baltic Song Festivals: the Latvian Song Festival (2013, 2018, 2023), the Lithuanian Song Festival (2024), and the Estonian Song Festival (2025). This achievement reflects our dedication to carrying Baltic choral traditions across borders.</p>

@@ -374,6 +374,20 @@
     .language-switcher button{padding:.36rem .5rem;font-size:.78rem}
   }
 
+  
+  /* Upcoming concert banner */
+  .concert-banner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin:4.5rem 0 0;padding:1.4rem 1.65rem;border-radius:20px;background:radial-gradient(ellipse at top right,#a42b43,transparent 65%),#651020;color:#fff;box-shadow:var(--shadow-soft)}
+  .concert-banner[hidden]{display:none}
+  .concert-banner .concert-label{color:#f4d9a7;font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .concert-banner h2{font-size:clamp(1.35rem,2.5vw,1.85rem);line-height:1.25;margin:.35rem 0}
+  .concert-banner p{margin:.2rem 0;line-height:1.5}
+  .concert-banner .concert-details{font-size:.95rem;margin-top:.65rem}
+  .concert-banner .concert-free{color:#f4d9a7;font-weight:700}
+  .concert-banner .concert-link{display:inline-block;flex-shrink:0;background:#fff;color:#651020;padding:.75rem 1rem;border-radius:12px;font-weight:750;text-decoration:none;text-align:center}
+  .concert-banner .concert-link:hover{background:#fff0e0}
+  .concert-banner .concert-link:focus-visible{outline:3px solid #f4d9a7;outline-offset:4px}
+  @media(max-width:700px){.concert-banner{flex-direction:column;align-items:stretch;gap:1rem;padding:1.15rem;margin-top:4rem}}
+
   </style>
   <link rel="icon" type="image/png" href="/images/logo.png?v=2">
 </head>
@@ -405,6 +419,23 @@
 
     <main>
       <div class="content">
+
+        <div class="concert-banner" id="concertBanner" role="region" aria-labelledby="concertTitle" hidden>
+          <div>
+            <div class="concert-label"><span aria-hidden="true">✦ </span><span data-i18n="eventLabel">Upcoming concert</span></div>
+            <h2 id="concertTitle" data-i18n="eventTitle">Christmas concert in Tamsalu</h2>
+            <p data-i18n="eventSubtitle">Ziemeļu Balsis &amp; Charismata</p>
+            <div class="concert-details">
+              <p><time datetime="2026-12-12T15:00:00+02:00" data-i18n="eventDate">12 December 2026 · 15:00</time> · <span data-i18n="eventPlace">Tamsalu Cultural Centre</span></p>
+              <p class="concert-free" data-i18n="eventFree">Free admission</p>
+            </div>
+          </div>
+          <a class="concert-link" href="https://www.facebook.com/events/4589270481340196/" target="_blank" rel="noopener noreferrer" data-i18n="eventButton">View Facebook event →</a>
+        </div>
+        <script>
+          // Keep the announcement visible through the concert day in Estonia.
+          document.getElementById('concertBanner').hidden = Date.now() >= Date.parse('2026-12-13T00:00:00+02:00');
+        </script>
         <section id="about">
           <h1 data-i18n="aboutTitle">About us</h1>
           <div class="about-hero"><img class="media" src="Titulbilde.jpg" alt="Ziemeļu Balsis group photo"></div>
@@ -700,7 +731,7 @@
         pageTitle:'Ziemeļu Balsis — Latvian Mixed Choir in Estonia',
         metaDescription:'Latvian mixed choir in Estonia. Rehearsals in Tartu and Tallinn. Conductors Matīss Briedis and Rihards Zariņš.',
         navAbout:'About us', navRehearsals:'Rehearsals', navMedia:'Media', navGallery:'Gallery', navContacts:'Contacts', register:'Register here',
-        eventLabel:'Upcoming concert', eventTitle:'Conducting speciality concert exam “Three Suns Rising”', eventSubtitle:'Three Suns Rising', eventDate:'24.05.2026, 14:00', eventPlace:'EMTA suur saal — Estonian Academy of Music and Theatre, main hall', eventButton:'View Facebook event →',
+        eventLabel:'Upcoming concert', eventTitle:'Christmas concert in Tamsalu', eventSubtitle:'Ziemeļu Balsis & Charismata', eventDate:'12 December 2026 · 15:00', eventPlace:'Tamsalu Cultural Centre', eventFree:'Free admission', eventButton:'View Facebook event →',
         whenLabel:'When:', whereLabel:'Where:', addressLabel:'Address:', maps:'Open in Google Maps',
         aboutTitle:'About us',
         aboutP1:'The Latvian choir in Estonia “Ziemeļu Balsis” was founded in 2012. Today, the choir unites singers from ten different countries. Ziemeļu Balsis is special not only for its international membership but also for its ability to bring together people from two Estonian cities — Tartu and Tallinn. Thanks to regular joint rehearsals, the choir has grown into a truly harmonious and united collective.',
@@ -729,7 +760,7 @@
         pageTitle:'Ziemeļu Balsis — Latvijas jauktais koris Igaunijā',
         metaDescription:'Latviešu jauktais koris Igaunijā. Mēģinājumi Tartu un Tallinā. Diriģenti Matīss Briedis un Rihards Zariņš.',
         navAbout:'Par mums', navRehearsals:'Mēģinājumi', navMedia:'Mediji', navGallery:'Galerija', navContacts:'Kontakti', register:'Pievienojies',
-        eventLabel:'Gaidāmais koncerts', eventTitle:'Kordiriģēšanas specialitātes koncerteksāmens „Trīs saulītes uzlecami”', eventSubtitle:'Trīs saulītes uzlecami', eventDate:'24.05.2026., 14.00', eventPlace:'EMTA lielā zāle — Igaunijas Mūzikas un teātra akadēmijas lielā zāle', eventButton:'Skatīt Facebook notikumu →',
+        eventLabel:'Gaidāmais koncerts', eventTitle:'Ziemassvētku koncerts Tamsalu', eventSubtitle:'Ziemeļu Balsis un Charismata', eventDate:'2026. gada 12. decembrī · 15.00', eventPlace:'Tamsalu kultūras nams', eventFree:'Ieeja bez maksas', eventButton:'Skatīt Facebook pasākumu →',
         whenLabel:'Kad:', whereLabel:'Kur:', addressLabel:'Adrese:', maps:'Atvērt Google Maps',
         aboutTitle:'Par mums',
         aboutP1:'Latviešu koris Igaunijā “Ziemeļu Balsis” tika dibināts 2012. gadā. Šodien koris apvieno dziedātājus no desmit dažādām valstīm. “Ziemeļu Balsis” ir īpašs ne tikai ar savu starptautisko sastāvu, bet arī ar spēju pulcēt cilvēkus no divām Igaunijas pilsētām — Tartu un Tallinas. Pateicoties regulāriem kopmēģinājumiem, koris ir izaudzis par saskanīgu un vienotu kolektīvu.',
@@ -758,7 +789,7 @@
         pageTitle:'Ziemeļu Balsis — Läti segakoor Eestis',
         metaDescription:'Läti segakoor Eestis. Proovid Tartus ja Tallinnas. Dirigendid Matīss Briedis ja Rihards Zariņš.',
         navAbout:'Meist', navRehearsals:'Proovid', navMedia:'Meedia', navGallery:'Galerii', navContacts:'Kontaktid', register:'Liitu kooriga',
-        eventLabel:'Tulevane kontsert', eventTitle:'Kooridirigeerimise eriala kontserteksam „Kolme päikest tõusemassa“', eventSubtitle:'Kolme päikest tõusemassa', eventDate:'24.05.2026, 14.00', eventPlace:'EMTA suur saal — Eesti Muusika- ja Teatriakadeemia suur saal', eventButton:'Vaata Facebooki üritust →',
+        eventLabel:'Tulevane kontsert', eventTitle:'Jõulukontsert Tamsalus', eventSubtitle:'Ziemeļu Balsis ja Charismata', eventDate:'12. detsember 2026 · kell 15.00', eventPlace:'Tamsalu kultuurimaja', eventFree:'Sissepääs on tasuta', eventButton:'Vaata Facebooki üritust →',
         whenLabel:'Millal:', whereLabel:'Kus:', addressLabel:'Aadress:', maps:'Ava Google Mapsis',
         aboutTitle:'Meist',
         aboutP1:'Eesti Läti koor “Ziemeļu Balsis” asutati 2012. aastal. Täna ühendab koor lauljaid kümnest eri riigist. “Ziemeļu Balsis” on eriline mitte ainult oma rahvusvahelise koosseisu, vaid ka selle poolest, et toob kokku inimesed kahest Eesti linnast — Tartust ja Tallinnast. Tänu regulaarsetele ühisproovidele on koor kasvanud tõeliselt ühtseks ja harmooniliseks kollektiiviks.',

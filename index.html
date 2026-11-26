@@ -389,16 +389,14 @@
   @media(max-width:700px){.concert-banner{flex-direction:column;align-items:stretch;gap:1rem;padding:1.15rem;margin-top:4rem}}
 
   </style>
+<link rel="stylesheet" href="css/shared.css">
+<link rel="stylesheet" href="css/website.css">
   <link rel="icon" type="image/png" href="/images/logo.png?v=2">
 </head>
 
 <body>
 
-  <div class="language-switcher" aria-label="Language selector">
-    <button type="button" class="active" data-lang-btn="en">ENG</button>
-    <button type="button" data-lang-btn="lv">LV</button>
-    <button type="button" data-lang-btn="ee">EE</button>
-  </div>
+
   <div class="layout">
     <aside>
       <div class="brand">
@@ -415,12 +413,18 @@
         </ul>
         <a class="btn" href="https://forms.gle/sJ83ptDXcackn1jQA" target="_blank" rel="noopener"> <span data-i18n="register">Register here</span></a>
       </nav>
+  <div class="language-switcher" aria-label="Language selector">
+    <button type="button" class="active" data-lang-btn="en">ENG</button>
+    <button type="button" data-lang-btn="lv">LV</button>
+    <button type="button" data-lang-btn="ee">EE</button>
+  </div>
     </aside>
 
     <main>
       <div class="content">
 
-        <div class="concert-banner" id="concertBanner" role="region" aria-labelledby="concertTitle" hidden>
+
+        <div class="concert-banner event-preview" id="concertBanner" role="region" aria-labelledby="concertTitle" hidden>
           <div>
             <div class="concert-label"><span aria-hidden="true">✦ </span><span data-i18n="eventLabel">Upcoming concert</span></div>
             <h2 id="concertTitle" data-i18n="eventTitle">Christmas concert in Tamsalu</h2>
@@ -430,27 +434,29 @@
               <p class="concert-free" data-i18n="eventFree">Free admission</p>
             </div>
           </div>
-          <a class="concert-link" href="https://www.facebook.com/events/4589270481340196/" target="_blank" rel="noopener noreferrer" data-i18n="eventButton">View Facebook event →</a>
+          <div class="concert-actions"><button type="button" class="poster-open" id="posterOpen"><img id="posterThumb" src="images/concert-poster-ee.jpeg" alt=""><span data-i18n="posterView">View poster</span></button><a class="concert-link" href="https://www.facebook.com/events/4589270481340196/" target="_blank" rel="noopener noreferrer" data-i18n="eventButton">View Facebook event →</a></div>
         </div>
         <script>
           // Keep the announcement visible through the concert day in Estonia.
           document.getElementById('concertBanner').hidden = Date.now() >= Date.parse('2026-12-13T00:00:00+02:00');
         </script>
+        <section class="hero" id="home"><div class="hero-copy"><h1>Ziemeļu Balsis</h1><p data-i18n="heroTag">Latvian mixed choir in Estonia</p><div class="hero-actions"><a class="btn" href="https://forms.gle/sJ83ptDXcackn1jQA" target="_blank" rel="noopener" data-i18n="register">Register here</a><a class="secondary" href="#gallery" data-i18n="navGallery">Gallery</a></div><div class="eyebrow hero-location" data-i18n="heroLocation">TALLINN · TARTU / EST. 2012</div></div><div class="about-hero"><img class="media" src="Titulbilde.jpg" alt="Ziemeļu Balsis group photo"></div></section>
         <section id="about">
-          <h1 data-i18n="aboutTitle">About us</h1>
-          <div class="about-hero"><img class="media" src="Titulbilde.jpg" alt="Ziemeļu Balsis group photo"></div>
+          <h2 data-i18n="aboutTitle">About us</h2>
+          
           <div class="about-text">
             <p data-i18n="aboutP1">The Latvian choir in Estonia "Ziemeļu Balsis" was founded in 2012. Today, the choir unites singers from ten different countries. Ziemeļu Balsis is special not only for its international membership but also for its ability to bring together people from two Estonian cities — Tartu and Tallinn. Thanks to regular joint rehearsals, the choir has grown into a truly harmonious and united collective.</p>
             <p data-i18n="aboutP2">We are proud to be the first choir to take part in all three Baltic Song Festivals: the Latvian Song Festival (2013, 2018, 2023), the Lithuanian Song Festival (2024), and the Estonian Song Festival (2025). This achievement reflects our dedication to carrying Baltic choral traditions across borders.</p>
+          </div><div class="about-text">
             <p data-i18n="aboutP3">Our musical direction is led by two inspiring conductors — Matīss Briedis and Rihards Zariņš.</p>
-            <p data-i18n="aboutP4">Matīss Briedis graduated from the Heino Eller Music School in 2017 and completed his Master’s degree in conducting at the Estonian Academy of Music and Theatre in 2026. A member of Ziemeļu Balsis since 2013, he has served as one of the choir’s conductors since 2017. Over the years, Matīss has led several choirs in Tartu and Tallinn, preparing them for national song festivals across the Baltic countries.</p>
-            <p data-i18n="aboutP5">Rihards Zariņš began his musical journey in 1998 at the Riga Cathedral Choir School and continued at the Jāzeps Vītols Academy of Music in Latvia. Over the years, he has conducted choirs in Latvia, Estonia, and Finland, including in Helsinki, and has been actively involved in organizing choir events since 2013. His education also includes studies at the Estonian Academy of Music and Theatre, strengthening his ties with the Baltic choral tradition.</p>
-            <p data-i18n="aboutP6">Together, Matīss and Rihards shape the sound and spirit of Ziemeļu Balsis, guiding the choir to new heights while keeping alive the joy of singing that unites us all.</p>
+            
+            
+            
           </div>
           <div class="about-grid">
-            <div class="portrait-card"><img class="portrait-img" src="images/matiss-briedis.jpg" alt="Matīss Briedis"><div class="portrait-caption">Matīss Briedis</div></div>
-            <div class="portrait-card"><img class="portrait-img" src="images/rihards-zarins.jpg" alt="Rihards Zariņš"><div class="portrait-caption">Rihards Zariņš</div></div>
-          </div>
+            <div class="portrait-card"><img class="portrait-img" src="images/matiss-briedis.jpg" alt="Matīss Briedis"><div class="portrait-caption">Matīss Briedis</div><p data-i18n="aboutP4">Matīss Briedis graduated from the Heino Eller Music School in 2017 and completed his Master’s degree in conducting at the Estonian Academy of Music and Theatre in 2026. A member of Ziemeļu Balsis since 2013, he has served as one of the choir’s conductors since 2017. Over the years, Matīss has led several choirs in Tartu and Tallinn, preparing them for national song festivals across the Baltic countries.</p></div>
+            <div class="portrait-card"><img class="portrait-img" src="images/rihards-zarins.jpg" alt="Rihards Zariņš"><div class="portrait-caption">Rihards Zariņš</div><p data-i18n="aboutP5">Rihards Zariņš began his musical journey in 1998 at the Riga Cathedral Choir School and continued at the Jāzeps Vītols Academy of Music in Latvia. Over the years, he has conducted choirs in Latvia, Estonia, and Finland, including in Helsinki, and has been actively involved in organizing choir events since 2013. His education also includes studies at the Estonian Academy of Music and Theatre, strengthening his ties with the Baltic choral tradition.</p></div>
+          </div><div class="about-text closing-bio"><p data-i18n="aboutP6">Together, Matīss and Rihards shape the sound and spirit of Ziemeļu Balsis, guiding the choir to new heights while keeping alive the joy of singing that unites us all.</p></div>
         </section>
 
         <section id="rehearsals">
@@ -476,7 +482,7 @@
             <article class="news-card"><h3>Läti-Eesti koori dirigent: ootan väga, et laulu vägi ajaks vihma minema</h3><div class="meta-row" data-domain="kultuur.err.ee"><img alt="" /><span>ERR Kultuur</span></div><div class="actions"><a class="read-link" href="https://kultuur.err.ee/1609738668/lati-eesti-koori-dirigent-ootan-vaga-et-lauluvoim-ajaks-vihma-minema" target="_blank" rel="noopener"><span data-i18n="readArticle">Read →</span></a></div></article>
             <article class="news-card"><h3>Leedu tähistab laulupeo sajandat sünnipäeva</h3><div class="meta-row" data-domain="kultuur.err.ee"><img alt="" /><span>ERR Kultuur</span></div><div class="actions"><a class="read-link" href="https://kultuur.err.ee/1609387721/leedu-tahistab-laulupeo-sajandat-sunnipaeva" target="_blank" rel="noopener"><span data-i18n="readArticle">Read →</span></a></div></article>
             <article class="news-card"><h3>Laulupidu — see on huulepulk</h3><div class="meta-row" data-domain="www.sirp.ee"><img alt="" /><span>Sirp</span></div><div class="actions"><a class="read-link" href="https://www.sirp.ee/laulupidu-see-on-huulepulk/" target="_blank" rel="noopener"><span data-i18n="readArticle">Read →</span></a></div></article>          </div>
-          <div class="toggle-wrap"><button class="toggle-btn" id="mediaToggle" data-i18n="mediaShowMore">Show more</button></div>
+          <div class="toggle-wrap"><button class="toggle-btn" id="mediaToggle" data-i18n="mediaShowMore">Show all</button></div>
           <script>
             document.querySelectorAll('#news .meta-row').forEach(row => {
               const d = row.getAttribute('data-domain');
@@ -486,17 +492,17 @@
 
             const cards = Array.from(document.querySelectorAll('#news .news-card'));
             const toggle = document.getElementById('mediaToggle');
-            const initial = 6;
-            function applyClamp(collapsed){cards.forEach((card,i)=>{card.style.display=(collapsed&&i>=initial)?'none':''});toggle.textContent = window.t ? (collapsed ? window.t('mediaShowMore') : window.t('mediaShowLess')) : (collapsed ? 'Show more' : 'Show less')}
+            const initial = () => window.innerWidth >= 1100 ? 4 : window.innerWidth >= 760 ? 3 : window.innerWidth >= 520 ? 2 : 1;
+            function applyClamp(collapsed){cards.forEach((card,i)=>{card.style.display=(collapsed&&i>=initial())?'none':''});toggle.textContent = window.t ? (collapsed ? window.t('mediaShowMore') : window.t('mediaShowLess')) : (collapsed ? 'Show all' : 'Show less')}
             let collapsed = true;
             applyClamp(collapsed);
-            toggle.addEventListener('click',()=>{collapsed=!collapsed;applyClamp(collapsed)});
+            toggle.addEventListener('click',()=>{collapsed=!collapsed;applyClamp(collapsed)}); window.addEventListener('resize',()=>applyClamp(collapsed));
           </script>
         </section>
 
         <section id="gallery">
           <h2 data-i18n="galleryTitle">Gallery</h2>
-          <div style="margin:0 0 1rem 0;max-width:1000px;">
+          <div class="gallery-video">
             <iframe src="https://www.youtube.com/embed/ULzgT8_4hVk?start=50&modestbranding=1&rel=0" title="Ziemeļu Balsis video" loading="lazy" allowfullscreen style="width:100%; aspect-ratio:16 / 9; border:0; border-radius:14px;"></iframe>
           </div>
 
@@ -603,7 +609,7 @@
           </div>
         </section>
 
-        <footer></footer>
+        <footer><img src="images/logo.png" alt="" class="footer-mark"><span>Ziemeļu Balsis</span></footer>
       </div>
     </main>
   </div>
@@ -731,7 +737,7 @@
         pageTitle:'Ziemeļu Balsis — Latvian Mixed Choir in Estonia',
         metaDescription:'Latvian mixed choir in Estonia. Rehearsals in Tartu and Tallinn. Conductors Matīss Briedis and Rihards Zariņš.',
         navAbout:'About us', navRehearsals:'Rehearsals', navMedia:'Media', navGallery:'Gallery', navContacts:'Contacts', register:'Register here',
-        eventLabel:'Upcoming concert', eventTitle:'Christmas concert in Tamsalu', eventSubtitle:'Ziemeļu Balsis & Charismata', eventDate:'12 December 2026 · 15:00', eventPlace:'Tamsalu Cultural Centre', eventFree:'Free admission', eventButton:'View Facebook event →',
+        heroTag:'Latvian mixed choir in Estonia', heroLocation:'TALLINN · TARTU / EST. 2012', posterView:'View poster', eventLabel:'Upcoming concert', eventTitle:'Christmas concert in Tamsalu', eventSubtitle:'Ziemeļu Balsis & Charismata', eventDate:'12 December 2026 · 15:00', eventPlace:'Tamsalu Cultural Centre', eventFree:'Free admission', eventButton:'View Facebook event →',
         whenLabel:'When:', whereLabel:'Where:', addressLabel:'Address:', maps:'Open in Google Maps',
         aboutTitle:'About us',
         aboutP1:'The Latvian choir in Estonia “Ziemeļu Balsis” was founded in 2012. Today, the choir unites singers from ten different countries. Ziemeļu Balsis is special not only for its international membership but also for its ability to bring together people from two Estonian cities — Tartu and Tallinn. Thanks to regular joint rehearsals, the choir has grown into a truly harmonious and united collective.',
@@ -741,7 +747,7 @@
         aboutP5:'Rihards Zariņš began his musical journey in 1998 at the Riga Cathedral Choir School and continued at the Jāzeps Vītols Academy of Music in Latvia. Over the years, he has conducted choirs in Latvia, Estonia, and Finland, including in Helsinki, and has been actively involved in organizing choir events since 2013. His education also includes studies at the Estonian Academy of Music and Theatre, strengthening his ties with the Baltic choral tradition.',
         aboutP6:'Together, Matīss and Rihards shape the sound and spirit of Ziemeļu Balsis, guiding the choir to new heights while keeping alive the joy of singing that unites us all.',
         rehearsalsTitle:'Rehearsals', rehearsalTime:'Wednesdays, 18:00', tartuAddress:'Juhan Liivi 2d (Tartu International School)', tallinnAddress:'Tõnismägi 10, 15190 Tallinn',
-        mediaTitle:'Media', readArticle:'Read →', mediaShowMore:'Show more', mediaShowLess:'Show less',
+        mediaTitle:'Media', readArticle:'Read →', mediaShowMore:'Show all', mediaShowLess:'Show less',
         article1:'Estonian Latvian Choir concert “Three Little Suns Rising”',
         article2:'From Beijing to Tartu: how voices from different worlds meet in Latvian song',
         article3:'Three Baltic Song Festivals in a row — the special story of “Ziemeļu Balsis”',
@@ -760,7 +766,7 @@
         pageTitle:'Ziemeļu Balsis — Latvijas jauktais koris Igaunijā',
         metaDescription:'Latviešu jauktais koris Igaunijā. Mēģinājumi Tartu un Tallinā. Diriģenti Matīss Briedis un Rihards Zariņš.',
         navAbout:'Par mums', navRehearsals:'Mēģinājumi', navMedia:'Mediji', navGallery:'Galerija', navContacts:'Kontakti', register:'Pievienojies',
-        eventLabel:'Gaidāmais koncerts', eventTitle:'Ziemassvētku koncerts Tamsalu', eventSubtitle:'Ziemeļu Balsis un Charismata', eventDate:'2026. gada 12. decembrī · 15.00', eventPlace:'Tamsalu kultūras nams', eventFree:'Ieeja bez maksas', eventButton:'Skatīt Facebook pasākumu →',
+        heroTag:'Latviešu jauktais koris Igaunijā', heroLocation:'TALLINA · TARTU / KOPŠ 2012', posterView:'Skatīt afišu', eventLabel:'Gaidāmais koncerts', eventTitle:'Ziemassvētku koncerts Tamsalu', eventSubtitle:'Ziemeļu Balsis un Charismata', eventDate:'2026. gada 12. decembrī · 15.00', eventPlace:'Tamsalu kultūras nams', eventFree:'Ieeja bez maksas', eventButton:'Skatīt Facebook pasākumu →',
         whenLabel:'Kad:', whereLabel:'Kur:', addressLabel:'Adrese:', maps:'Atvērt Google Maps',
         aboutTitle:'Par mums',
         aboutP1:'Latviešu koris Igaunijā “Ziemeļu Balsis” tika dibināts 2012. gadā. Šodien koris apvieno dziedātājus no desmit dažādām valstīm. “Ziemeļu Balsis” ir īpašs ne tikai ar savu starptautisko sastāvu, bet arī ar spēju pulcēt cilvēkus no divām Igaunijas pilsētām — Tartu un Tallinas. Pateicoties regulāriem kopmēģinājumiem, koris ir izaudzis par saskanīgu un vienotu kolektīvu.',
@@ -770,7 +776,7 @@
         aboutP5:'Rihards Zariņš savu muzikālo ceļu sāka 1998. gadā Rīgas Doma kora skolā un turpināja Jāzepa Vītola Latvijas Mūzikas akadēmijā. Gadu gaitā viņš diriģējis korus Latvijā, Igaunijā un Somijā, tostarp Helsinkos, un kopš 2013. gada aktīvi iesaistījies koru pasākumu organizēšanā. Viņa izglītībā ietilpst arī studijas Igaunijas Mūzikas un teātra akadēmijā, kas vēl vairāk nostiprina saikni ar Baltijas kordziedāšanas tradīciju.',
         aboutP6:'Kopā Matīss un Rihards veido “Ziemeļu Balsu” skanējumu un garu, vedot kori uz jauniem mērķiem un saglabājot dzīvu dziedāšanas prieku, kas mūs visus vieno.',
         rehearsalsTitle:'Mēģinājumi', rehearsalTime:'Trešdienās, 18.00', tartuAddress:'Juhan Liivi 2d (Tartu Starptautiskā skola)', tallinnAddress:'Tõnismägi 10, 15190 Tallina',
-        mediaTitle:'Mediji', readArticle:'Lasīt →', mediaShowMore:'Rādīt vairāk', mediaShowLess:'Rādīt mazāk',
+        mediaTitle:'Mediji', readArticle:'Lasīt →', mediaShowMore:'Rādīt visus', mediaShowLess:'Rādīt mazāk',
         article1:'Igaunijas latviešu kora koncerts “Trīs saulītes uzlecami”',
         article2:'No Pekinas līdz Tartu: kā dažādas pasaules balsis satiekas latviešu dziesmā',
         article3:'Trīs Baltijas Dziesmu svētki pēc kārtas – kora “Ziemeļu Balsis” īpašais stāsts',
@@ -789,7 +795,7 @@
         pageTitle:'Ziemeļu Balsis — Läti segakoor Eestis',
         metaDescription:'Läti segakoor Eestis. Proovid Tartus ja Tallinnas. Dirigendid Matīss Briedis ja Rihards Zariņš.',
         navAbout:'Meist', navRehearsals:'Proovid', navMedia:'Meedia', navGallery:'Galerii', navContacts:'Kontaktid', register:'Liitu kooriga',
-        eventLabel:'Tulevane kontsert', eventTitle:'Jõulukontsert Tamsalus', eventSubtitle:'Ziemeļu Balsis ja Charismata', eventDate:'12. detsember 2026 · kell 15.00', eventPlace:'Tamsalu kultuurimaja', eventFree:'Sissepääs on tasuta', eventButton:'Vaata Facebooki üritust →',
+        heroTag:'Läti segakoor Eestis', heroLocation:'TALLINN · TARTU / ALATES 2012', posterView:'Vaata plakatit', eventLabel:'Tulevane kontsert', eventTitle:'Jõulukontsert Tamsalus', eventSubtitle:'Ziemeļu Balsis ja Charismata', eventDate:'12. detsember 2026 · kell 15.00', eventPlace:'Tamsalu kultuurimaja', eventFree:'Sissepääs on tasuta', eventButton:'Vaata Facebooki üritust →',
         whenLabel:'Millal:', whereLabel:'Kus:', addressLabel:'Aadress:', maps:'Ava Google Mapsis',
         aboutTitle:'Meist',
         aboutP1:'Eesti Läti koor “Ziemeļu Balsis” asutati 2012. aastal. Täna ühendab koor lauljaid kümnest eri riigist. “Ziemeļu Balsis” on eriline mitte ainult oma rahvusvahelise koosseisu, vaid ka selle poolest, et toob kokku inimesed kahest Eesti linnast — Tartust ja Tallinnast. Tänu regulaarsetele ühisproovidele on koor kasvanud tõeliselt ühtseks ja harmooniliseks kollektiiviks.',
@@ -799,7 +805,7 @@
         aboutP5:'Rihards Zariņš alustas oma muusikateed 1998. aastal Riia Toomkiriku koorikoolis ja jätkas õpinguid Jāzeps Vītolsi Läti Muusikaakadeemias. Aastate jooksul on ta juhatanud koore Lätis, Eestis ja Soomes, sealhulgas Helsingis, ning on alates 2013. aastast aktiivselt osalenud koorisündmuste korraldamises. Tema haridustee hulka kuuluvad ka õpingud Eesti Muusika- ja Teatriakadeemias, mis tugevdavad tema sidet Balti kooritraditsiooniga.',
         aboutP6:'Matīss ja Rihards kujundavad koos “Ziemeļu Balsise” kõla ja vaimu, juhtides koori uute eesmärkide poole ning hoides elus laulurõõmu, mis meid kõiki ühendab.',
         rehearsalsTitle:'Proovid', rehearsalTime:'Kolmapäeviti, 18.00', tartuAddress:'Juhan Liivi 2d (Tartu Rahvusvaheline Kool)', tallinnAddress:'Tõnismägi 10, 15190 Tallinn',
-        mediaTitle:'Meedia', readArticle:'Loe →', mediaShowMore:'Näita rohkem', mediaShowLess:'Näita vähem',
+        mediaTitle:'Meedia', readArticle:'Loe →', mediaShowMore:'Näita kõiki', mediaShowLess:'Näita vähem',
         article1:'Eesti Läti koori kontsert “Kolm päikest tõusevad”',
         article2:'Pekingist Tartusse: kuidas eri maailma hääled kohtuvad läti laulus',
         article3:'Kolm Balti laulupidu järjest — “Ziemeļu Balsise” eriline lugu',
@@ -822,6 +828,7 @@
     window.applyLanguage = function(lang){
       window.currentLang = translations[lang] ? lang : 'en';
       localStorage.setItem('zbLang', window.currentLang);
+      document.dispatchEvent(new CustomEvent('zbLanguage',{detail:window.currentLang}));
       document.documentElement.lang = window.currentLang === 'ee' ? 'et' : window.currentLang;
       document.title = window.t('pageTitle');
       const meta = document.querySelector('meta[name="description"]');
@@ -845,5 +852,6 @@
   })();
   </script>
 
-</body>
+<dialog id="posterDialog" aria-label="Concert poster"><div class="poster-toolbar"><button type="button" data-poster="ee">EE</button><button type="button" data-poster="lv">LV</button><button type="button" id="posterClose" aria-label="Close">×</button></div><img id="posterLarge" alt="Concert poster"></dialog><script>
+(()=>{const d=document.getElementById('posterDialog'), thumb=document.getElementById('posterThumb'), large=document.getElementById('posterLarge');let lang='ee';function choose(l){lang=l==='lv'?'lv':'ee';thumb.src='images/concert-poster-'+lang+'.jpeg';large.src=thumb.src;d.querySelectorAll('[data-poster]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.poster===lang)));}choose(window.currentLang);document.addEventListener('zbLanguage',e=>choose(e.detail));document.getElementById('posterOpen').onclick=()=>d.showModal();document.getElementById('posterClose').onclick=()=>d.close();d.querySelectorAll('[data-poster]').forEach(b=>b.onclick=()=>choose(b.dataset.poster));d.addEventListener('click',e=>{if(e.target===d)d.close()});})();</script></body>
 </html>

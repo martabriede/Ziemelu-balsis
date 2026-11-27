@@ -819,6 +819,30 @@ s.onerror=()=>{
 
 document.body.appendChild(s);
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6af66e57143f43d18708d72d7029def2"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics: browser opt-out -->
+<script>
+(function () {
+  var key = 'zbAnalyticsOptOut';
+  var url = new URL(window.location.href);
+  var choice = url.searchParams.get('analytics');
+  var excluded = choice === 'off';
+  try {
+    if (choice === 'off') localStorage.setItem(key, '1');
+    if (choice === 'on') localStorage.removeItem(key);
+    excluded = excluded || localStorage.getItem(key) === '1';
+  } catch (e) { /* Storage may be unavailable in private browsers. */ }
+  if (choice === 'off' || choice === 'on') {
+    url.searchParams.delete('analytics');
+    history.replaceState(history.state, '', url.href);
+  }
+  if (excluded) return;
+  var beacon = document.createElement('script');
+  beacon.type = 'module';
+  beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  beacon.setAttribute('data-cf-beacon', JSON.stringify({token: "6af66e57143f43d18708d72d7029def2"}));
+  document.body.appendChild(beacon);
+})();
+</script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>
